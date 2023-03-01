@@ -1,0 +1,38 @@
+
+
+.categoriesBar{
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    cursor: pointer;
+   color: white;
+   position: fixed;
+   top: 10%;
+   background-color: #0F0F0F;
+   width: 100%;
+   font-family: sans-serif;
+   
+}
+span{
+    margin-right: 1rem;
+    padding: 0.5rem;
+    white-space: nowrap;
+    border: 1.5px solid gray;
+    border-radius: 999px;
+
+
+  }
+  span:hover{
+    background-color: #374a59;
+ }
+ span.active{
+    color: #fff;
+    background-color: #606060;
+    border-color:gray;
+ }
+ ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}

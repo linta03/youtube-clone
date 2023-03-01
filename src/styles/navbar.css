@@ -1,0 +1,67 @@
+:root {
+   --black: #161515;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar{
+    background-color:var(--black);
+    height: 10vh;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    position: fixed;
+    width: 100%;
+
+}
+.search_input{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+.search_input input{
+    width: 50%;
+    padding: 7px 6px;
+    margin: 4px 5px;
+    box-sizing: border-box;
+    border: 1px solid gray;
+    border-radius: 20px;
+    background-color: black;
+    color: gray;
+    transition: width 0.4s ease-in-out;
+}
+.search_input input[type="text"]:focus{
+    
+  border: none;   
+  width: 100%;
+}
+.Search_icon{
+    cursor: pointer;
+}
+.profile_photo img{
+    margin: 3px;
+  border-radius: 50%;
+}
+
+
+/* responsive */
+@media (max-width: 720px) {
+    .navbar{
+        gap: 20px;
+    }
+  
+  }
+@media (max-width: 520px) {
+    .navbar{
+        gap: 20px;
+    }
+   
+    .Youtube_logo{
+        display: none;
+    }
+  }
+

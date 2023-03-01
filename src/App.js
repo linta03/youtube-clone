@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Categories from './components/Categories'
+import Navbar from './components/Navbar'
+import Sidebar from './components/Sidebar'
+import Home from "./pages/Home"
+import Search from './pages/Search'
 
-function App() {
+const App = () => {
+  const [ShowNavbar, setShowNavbar] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar setShowNavbar={setShowNavbar} ShowNavbar={ShowNavbar}/>
+      <Categories/>
+      <Sidebar ShowNavbar={ShowNavbar}/>
+      <BrowserRouter>
+       <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/video/:id' element={<Search/>}/>
+       </Routes>
+      </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

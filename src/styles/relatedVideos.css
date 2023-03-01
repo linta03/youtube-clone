@@ -1,0 +1,8 @@
+.Related_videos{
+    padding-top: 35%;
+}
+.relatedVideoCard{
+    display: flex;
+    flex-direction: row;
+    width: 27%;
+}
