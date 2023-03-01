@@ -30,11 +30,11 @@ const Categories = () => {
       ];
       const getCategories =async (val)=>{
 
-        const api = `https://youtube.googleapis.com/youtube/v3/search?maxResults=20&part=snippet&regionCode=pk&q=${val}&key=${API_KEY}`
+        const api = `https://youtube.googleapis.com/youtube/v3/search?maxResults=20&part=snippet&regionCode=Pk&q=${val}&key=${API_KEY}`
         try {
           const response = await fetch(api);
           const data = await response.json();
-        //   console.log(data);
+          // console.log(data?.items);
           setcategories(data?.items);
           dispatch(handleVideo(data?.items));
           
@@ -47,15 +47,7 @@ const Categories = () => {
         setactiveElement(val);
         getCategories(val)
       };
-      // useEffect(() => {
-      //          getCategories();
-
-      // }, [])
-      console.log(categories)
-      // GET https://youtube.googleapis.com/youtube/v3/videoCategories?part=snippet&regionCode=pk&key=[YOUR_API_KEY] HTTP/1.1
-
-      // Authorization: Bearer [YOUR_ACCESS_TOKEN]
-      // Accept: application/json
+     
       
       
       

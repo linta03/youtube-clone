@@ -11,10 +11,10 @@ const App = () => {
 
   return (
     <div>
+      <BrowserRouter>
       <Navbar setShowNavbar={setShowNavbar} ShowNavbar={ShowNavbar}/>
       <Categories/>
       <Sidebar ShowNavbar={ShowNavbar}/>
-      <BrowserRouter>
        <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/video/:id' element={<Search/>}/>

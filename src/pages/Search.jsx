@@ -39,7 +39,7 @@ const Search = () => {
     </div>
     <div className="related_videos">
     {
-        videoDetail.length===0?<div>hjhgj</div>:   <RelatedVideos/>
+        videoDetail.length===0?<div>hjhgj</div>:   <RelatedVideos id={id}/>
       }
      
     </div>

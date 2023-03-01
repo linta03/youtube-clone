@@ -7,13 +7,10 @@ import moment from 'moment/moment'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleVideo } from '../store/slices/categorySlice'
 import { Link } from 'react-router-dom'
-import InfiniteScroll from 'react-infinite-scroll-component'
 
 const Body = () => {
-  // const [VideoList, setVideoList] = useState([])
   const dispatch = useDispatch();
   const video = useSelector((store) => store.categories.video);
-  const [nextPageToken, setnextPageToken] = useState([])
 
   const VideoResponse = async () => {
 
@@ -24,7 +21,6 @@ const Body = () => {
       //   console.log(data);
       // setVideoList(data?.items);
       dispatch(handleVideo(data?.items))
-      setnextPageToken(data)
 
 
     } catch (err) {
@@ -37,31 +33,8 @@ const Body = () => {
 
 
   }, [])
-  // console.log(VideoList)
-
-  //   GET https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=[YOUR_API_KEY] HTTP/1.1
-
-  // Authorization: Bearer [YOUR_ACCESS_TOKEN]
-  // Accept: application/json
-
-  const fetchData=async()=>{
-    const api = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&pageToken=${nextPageToken.nextPageToken}&chart=mostPopular&maxResults=40&regionCode=PK&key=${API_KEY}`
-    try {
-      const response = await fetch(api);
-      const data = await response.json();
-      //   console.log(data);
-      // setVideoList(data?.items);
-      dispatch(handleVideo([...video,data]))
-
-
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
-
-  // console.log(nextPageToken)
-
+//   console.log(video)
+// console.log(video[0]?.id)
 
 
 

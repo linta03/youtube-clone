@@ -8,8 +8,9 @@
     scrollbar-width: none;
     cursor: pointer;
    color: white;
-   position: fixed;
-   top: 10%;
+   /* position: fixed;
+   top: 10%; */
+   padding-top: 5%;
    background-color: #0F0F0F;
    width: 100%;
    font-family: sans-serif;
